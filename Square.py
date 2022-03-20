@@ -7,6 +7,7 @@ N = (eval(input("Enter the number: ")))
 #Define the function:
 def Squ(N):
 
+#Here we use exception handling to counter string values:
     try:
         print("Welcme user.....")
         Square = pow(N, 2)
@@ -14,7 +15,7 @@ def Squ(N):
 
     except TypeError as t:
 
-        print("Given value is not a numer -->", t)
+        print("Given value is not a number -->", t)
 
     finally:
         print("Thank you user....")
