@@ -7,21 +7,32 @@ def div(N, D):
 
 #Here we use exception handling to counter the zero divisible error:
     try:
+        N = int(N)
+        D = int(D)
         Q = N//D
         R = N%D
+
+        print("Quotient: ", Q)
+        print("Remainder: ", R)
+    
+    except ValueError as v:
+        Q = v
+        R = v
+        print(Q)
+        print(R)
+        print("Invalid input, only integers are allowed")
 
     except ZeroDivisionError as z:
         Q = z
         R = z
+        print(Q)
+        print(R)
         print("Anything divided by zero is Infinity")
 
-    finally:
-        print("Quotient: ", Q)
-        print("Remainder: ", R)
-
 #User Input:
-N = int(input("Enter the Numerator value: "))
-D = int(input("Enter the Denominator value: "))
+N = input("Enter the value of Numerator: ")
+D = input("Enter the value of Denominator: ")
+
 #Call the function:
 div(N, D)
 
