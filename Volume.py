@@ -11,7 +11,7 @@ def Water_tank(l, w, h):
     else:
 #Apply the Mathematical formula here:
         vol = (l*w*h)
-        print("The volume of the water tank is: ", str(vol) + " m^3")
+        print("The volume of the water tank is: %.3f" %vol + " m^3")
        
 #User Input:
 print("Inputs has been taken in unit, Meter(m)")
