@@ -3,7 +3,6 @@
 # To convert it in acers, the otained value shoud be divided by 43,560.
 
 # Get Input from user:
-
 Length = eval(input("Enter the length of the field in feet: "))
 Width = eval(input("Enter the width of the field in feet: "))
 
