@@ -47,7 +47,7 @@ def Execution():
 
     if (Leap_Year(Year) is True):
         print ("The given year is Leap year")
-    elif (Leap_Year(Year) == False):
+    elif (Leap_Year(Year) is False):
         print ("The given year is not a Leap year")
     else:
         print (Leap_Year(Year))
