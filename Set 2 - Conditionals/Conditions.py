@@ -67,4 +67,4 @@ def main():
     Floats(Float1, Float2)
     OE(N)
 
-main()
+if __name__ == "__main__": main()

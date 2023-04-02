@@ -16,12 +16,16 @@ class Binary_Search:
     def __init__(self, Array):
 
         self.Array = Array
+
         # mid is used to store the index of the given number. If the number is not in the list, then the index value will stays as none.
         self.mid = None
+
         # count is used to store the count of the given number in the list.
         self.count = None
+
         # Instance variable to store the first occurence index.
         self.First_index = None
+        
         # Instance variable to store the second occurence index
         self.Second_index = None
 
@@ -63,14 +67,20 @@ class Binary_Search:
                     self.count+=1
             else: pass
             
-            if self.Array[self.mid+1] == N:
+            try:
+                if self.Array[self.mid+1] == N:
+                    
+                    inc = self.mid+1
+                    while(inc < len(self.Array)) and (self.Array[inc] == N):
 
-                inc = self.mid+1
-                while(inc < len(self.Array)) and (self.Array[inc] == N):
+                        inc+=1
+                        self.count+=1
 
-                    inc+=1
-                    self.count+=1
-            else: pass
+                else: pass
+
+            except Exception as e:
+
+                print(f"\n Index {self.mid} is the last element in the list,", e)
 
             return self.count
         
@@ -85,20 +95,26 @@ class Binary_Search:
             self.First_index = self.mid
             self.Second_index = -1
 
-            if self.Array[self.mid-1] == N:
+            try:
+                if self.Array[self.mid-1] == N:
 
-                dec = self.mid-1
-                while (dec >= 0) and (self.Array[dec] == N):
+                    dec = self.mid-1
+                    while (dec >= 0) and (self.Array[dec] == N):
 
-                    self.First_index = dec
-                    self.Second_index = dec+1
-                    dec-=1
+                        self.First_index = dec
+                        self.Second_index = dec+1
+                        dec-=1
 
-            elif self.Array[self.mid+1] == N: self.Second_index = self.mid+1
+                elif self.Array[self.mid+1] == N: self.Second_index = self.mid+1
 
-            dict = {"First_index":self.First_index, "Second_index":self.Second_index}
+                dict = {"First_index":self.First_index, "Second_index":self.Second_index}
 
-            return (dict)
+                return (dict)
+            
+            except Exception as e:
+                self.Second_index = -1
+                dict = {"First_index":self.First_index, "Second_index":self.Second_index}
+                return (dict)
         
         else:
             dict = {"First_index":-1, "Second_index":-1}
