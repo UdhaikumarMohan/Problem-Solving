@@ -6,7 +6,7 @@ B = eval(input("Enter the value of B: "))
 C = eval(input("Enter the value of C: "))
 
 class Largest:
-
+    
     def __init__(self, A, B, C):
 
         self.A = A
